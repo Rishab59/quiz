@@ -1,0 +1,42 @@
+import java.util.Scanner ;
+
+class Main
+{
+	// Quiz App Score Calculator By Rishab
+
+	public static void main(String [] args) 
+	{
+		Scanner sc = new Scanner(System.in) ;
+		int flag = 1 ;
+		
+		do
+		{
+			calculation() ;
+			System.out.print("\nDo you want to further calculate :\t") ;
+			flag = sc.nextInt();
+		}
+		while(flag == 1) ;
+		
+		System.out.println("\nDone\nThank You !!") ;
+	}
+	
+	static void calculation()
+	{
+		Scanner sc = new Scanner(System.in) ;
+		
+		int totQues = 30 ;
+		int finalScore = 0 ;
+		
+		System.out.print("\nEnter the total no.of correct questions :\t") ;
+		int correctQues = sc.nextInt() ;
+		
+		System.out.print("\nEnter the total no.of unanswered questions :\t") ;
+		int unansQues = sc.nextInt() ;
+		
+		int wrongQues = (totQues - correctQues) - unansQues ;
+		
+		finalScore = ((correctQues * 4) - (wrongQues * 2) - unansQues) ;
+		
+		System.out.println("\nThe Final Score is :\t" + finalScore) ;
+	}
+}
